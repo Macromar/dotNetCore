@@ -19,14 +19,24 @@ namespace mail
             
             return dictionary;
         }
+        public void FilteredEmailToConsole(IWebDriver driver, IList<IWebElement> table, int numberOfEmail)
+        {
+
+            var k = table[numberOfEmail];
+            IList<IWebElement> td = k.FindElements(By.TagName("tr"));
+            k.Click();
+            IWebElement element = driver.FindElement(By.XPath("//div[@role='tabpanel']//table"));
+            Console.WriteLine(element.Text);
+        }
         public void EmailToConsole(IWebDriver driver, IList<IWebElement> table, int numberOfEmail)
         {
             var k = table[numberOfEmail];
-            IList<IWebElement> td = k.FindElements(By.TagName("tr"));
+            IList<IWebElement> td = k.FindElements(By.TagName("td"));
             k.Click();
             IWebElement element = driver.FindElement(By.XPath("//div[@style='display:']"));
             Console.WriteLine(element.Text);
         }
+
         public void Login(IWebDriver driver)
         {
             driver.FindElement(By.XPath(xpathLocators["Login"])).SendKeys(settings["Login"]);
