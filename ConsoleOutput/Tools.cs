@@ -8,6 +8,9 @@ namespace mail
 {
     class Tools
     {
+        Dictionary<string, string> xpathLocators;
+        public Dictionary<string, string> settings;
+
         public Dictionary<string,string> JsonToDictionary(string path) {
             Dictionary<string, string> dictionary = new Dictionary<string, string>();
             StreamReader stream = new StreamReader(path);
@@ -19,18 +22,28 @@ namespace mail
         public void EmailToConsole(IWebDriver driver, IList<IWebElement> table, int numberOfEmail)
         {
             var k = table[numberOfEmail];
-            IList<IWebElement> td = k.FindElements(By.TagName("td"));
+            IList<IWebElement> td = k.FindElements(By.TagName("tr"));
             k.Click();
             IWebElement element = driver.FindElement(By.XPath("//div[@style='display:']"));
-            //driver.FindElement(By.XPath("//div[3]/div/div[2]/div/div[2]/div/div/div/div/div[2]/div/div/div/div[2]/div/table"));/////////////////////////////////////////////////////
-            //element= element.FindElement(By.XPath("//div[@style='display:']"));
             Console.WriteLine(element.Text);
-            //IList<IWebElement> tableRow1 = tableElement1.FindElements(By.TagName("tr"));
-            //foreach (var row in tableRow1)
-            //{
-            //    IList<IWebElement> td1 = row.FindElements(By.TagName("td"));
-            //        Console.WriteLine(td1[0].Text);
-            //}
+        }
+        public void Login(IWebDriver driver)
+        {
+            driver.FindElement(By.XPath(xpathLocators["Login"])).SendKeys(settings["Login"]);
+            driver.FindElement(By.XPath(xpathLocators["LoginButton"])).Click();
+            driver.FindElement(By.XPath(xpathLocators["Password"])).SendKeys(settings["Password"]);
+            driver.FindElement(By.XPath(xpathLocators["PasswordButton"])).Click();
+        }
+        public void SettingsUpload() {
+            string locatorsFile = Environment.CurrentDirectory.ToString();
+            locatorsFile = Path.GetFullPath(Path.Combine(locatorsFile, @"..\..\..\..\locators.json"));
+            string settingsFile = Path.GetFullPath(Path.Combine(locatorsFile, @"..\.\Settings.json"));
+            xpathLocators = new Dictionary<string, string>(JsonToDictionary(locatorsFile));
+            settings = new Dictionary<string, string>(JsonToDictionary(settingsFile));
+        }
+
+        public IWebElement GetElement(IWebDriver driver,string s) {
+            return driver.FindElement(By.XPath(xpathLocators[s]));
         }
     }
 }
