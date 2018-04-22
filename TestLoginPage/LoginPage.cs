@@ -67,9 +67,6 @@ namespace TestLoginPage
             Assert.AreEqual("Gmail", driver.Title);
         }
 
-
-
-
         [TearDown]
         public void AtTheEnd()
         {

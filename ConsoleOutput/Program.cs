@@ -30,28 +30,21 @@ namespace ConsoleOutput
             tools.PasswordPass(driver,  Configuration["Password"]);
             Console.Clear();
 
-            IList<IWebElement> tableRow = tools.GetElement(driver,locators.EmailList).FindElements(locators.TableRow);
             Console.WriteLine("===============First Email From First tab===============");
-            tools.EmailToConsole(driver, tableRow, 0);
-            driver.Navigate().Back();
+            tools.PublishEmail(driver, false, 0);
 
             Console.WriteLine("===============Last Email From First tab===============");
-            tableRow = tools.GetElement(driver, locators.EmailList).FindElements(locators.TableRow);
-            tools.EmailToConsole(driver, tableRow, tableRow.Count - 1);
-            driver.Navigate().Back();
+            tools.PublishEmail(driver, false, -1);
 
             tools.GetElement(driver, locators.SearchField).SendKeys(sender);
-            tools.GetElement(driver, locators.SearchButton).Click(); ;
+            tools.GetElement(driver, locators.SearchButton).Click();
 
             Console.WriteLine("===============First {0}'s Email From First tab===============", sender);
-            tableRow = tools.GetElement(driver, locators.FilteredEmailList).FindElements(locators.TableRow);
-            tools.EmailToConsole(driver, tableRow, 0);
-            driver.Navigate().Back();
+            tools.PublishEmail(driver, true, 0);
 
             Console.WriteLine("===============Last {0}'s Email From First tab===============",sender);
-            tableRow = tools.GetElement(driver, locators.FilteredEmailList).FindElements(locators.TableRow);
-            tools.EmailToConsole(driver, tableRow, tableRow.Count - 1);
-            driver.Navigate().Back();
+            tools.PublishEmail(driver, true, -1);
+
             driver.Quit();
             Console.ReadLine();
         }
