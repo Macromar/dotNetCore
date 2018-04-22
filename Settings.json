@@ -1,4 +1,6 @@
 {
   "Login": "tretre1234tre@gmail.com",
-  "Password": "somepassword"
+  "Password": "somepassword",
+  "Url": "http://mail.google.com",
+  "Sender": "bet.pt"
 }

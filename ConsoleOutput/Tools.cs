@@ -1,59 +1,34 @@
-﻿using OpenQA.Selenium;
+﻿using ConsoleOutput;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace mail
 {
     class Tools
     {
-        Dictionary<string, string> xpathLocators;
-        public Dictionary<string, string> settings;
+        Locators locators = new Locators();
 
-        public Dictionary<string,string> JsonToDictionary(string path) {
-            Dictionary<string, string> dictionary = new Dictionary<string, string>();
-            StreamReader stream = new StreamReader(path);
-            string jsonString = stream.ReadToEnd();
-            dictionary = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonString);
-            
-            return dictionary;
-        }
-        public void FilteredEmailToConsole(IWebDriver driver, IList<IWebElement> table, int numberOfEmail)
-        {
-
-            var k = table[numberOfEmail];
-            IList<IWebElement> td = k.FindElements(By.TagName("tr"));
-            k.Click();
-            IWebElement element = driver.FindElement(By.XPath("//div[@role='tabpanel']//table"));
-            Console.WriteLine(element.Text);
-        }
         public void EmailToConsole(IWebDriver driver, IList<IWebElement> table, int numberOfEmail)
         {
             var k = table[numberOfEmail];
-            IList<IWebElement> td = k.FindElements(By.TagName("td"));
             k.Click();
-            IWebElement element = driver.FindElement(By.XPath("//div[@style='display:']"));
+            IWebElement element = driver.FindElement(locators.EmailContent);
             Console.WriteLine(element.Text);
         }
 
-        public void Login(IWebDriver driver)
+        public void PasswordPass(IWebDriver driver, string password)
         {
-            driver.FindElement(By.XPath(xpathLocators["Login"])).SendKeys(settings["Login"]);
-            driver.FindElement(By.XPath(xpathLocators["LoginButton"])).Click();
-            driver.FindElement(By.XPath(xpathLocators["Password"])).SendKeys(settings["Password"]);
-            driver.FindElement(By.XPath(xpathLocators["PasswordButton"])).Click();
+            driver.FindElement(locators.Password).SendKeys(password);
+            driver.FindElement(locators.PasswordButton).Click();
         }
-        public void SettingsUpload() {
-            string locatorsFile = Environment.CurrentDirectory.ToString();
-            locatorsFile = Path.GetFullPath(Path.Combine(locatorsFile, @"..\..\..\..\locators.json"));
-            string settingsFile = Path.GetFullPath(Path.Combine(locatorsFile, @"..\.\Settings.json"));
-            xpathLocators = new Dictionary<string, string>(JsonToDictionary(locatorsFile));
-            settings = new Dictionary<string, string>(JsonToDictionary(settingsFile));
+        public void LoginPass(IWebDriver driver, string login) {
+            driver.FindElement(locators.Login).SendKeys(login);
+            driver.FindElement(locators.LoginButton).Click();
         }
 
-        public IWebElement GetElement(IWebDriver driver,string s) {
-            return driver.FindElement(By.XPath(xpathLocators[s]));
+        public IWebElement GetElement(IWebDriver driver,By s) {
+            return driver.FindElement(s);
         }
     }
 }

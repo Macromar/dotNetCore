@@ -5,7 +5,6 @@ C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\TestLogi
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\TestLoginPage.runtimeconfig.json
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\TestLoginPage.runtimeconfig.dev.json
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\TestLoginPage.dll
-C:\Users\MaReVo\source\repos\mail\TestLoginPage\obj\Debug\netcoreapp2.0\TestLoginPage.csprojResolveAssemblyReference.cache
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\obj\Debug\netcoreapp2.0\TestLoginPage.csproj.CoreCompileInputs.cache
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\obj\Debug\netcoreapp2.0\TestLoginPage.AssemblyInfoInputs.cache
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\obj\Debug\netcoreapp2.0\TestLoginPage.AssemblyInfo.cs
@@ -16,4 +15,6 @@ C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\Mono.Cec
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\TestLoginPage.pdb
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\obj\Debug\netcoreapp2.0\TestLoginPage.dll
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\obj\Debug\netcoreapp2.0\TestLoginPage.pdb
+C:\Users\MaReVo\source\repos\mail\TestLoginPage\obj\Debug\netcoreapp2.0\TestLoginPage.csprojResolveAssemblyReference.cache
+C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\Settings.json
 C:\Users\MaReVo\source\repos\mail\TestLoginPage\bin\Debug\netcoreapp2.0\chromedriver.exe

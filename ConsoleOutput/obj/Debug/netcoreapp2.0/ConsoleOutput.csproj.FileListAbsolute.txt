@@ -2,11 +2,14 @@ C:\Users\MaReVo\source\repos\mail\ConsoleOutput\bin\Debug\netcoreapp2.0\ConsoleO
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\bin\Debug\netcoreapp2.0\ConsoleOutput.runtimeconfig.json
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\bin\Debug\netcoreapp2.0\ConsoleOutput.runtimeconfig.dev.json
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\bin\Debug\netcoreapp2.0\ConsoleOutput.dll
-C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.csprojResolveAssemblyReference.cache
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.csproj.CoreCompileInputs.cache
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.AssemblyInfoInputs.cache
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.AssemblyInfo.cs
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\bin\Debug\netcoreapp2.0\ConsoleOutput.pdb
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.dll
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.pdb
+C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.Properties.Resources.resources
+C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.csproj.GenerateResource.cache
+C:\Users\MaReVo\source\repos\mail\ConsoleOutput\obj\Debug\netcoreapp2.0\ConsoleOutput.csprojResolveAssemblyReference.cache
+C:\Users\MaReVo\source\repos\mail\ConsoleOutput\bin\Debug\netcoreapp2.0\Settings.json
 C:\Users\MaReVo\source\repos\mail\ConsoleOutput\bin\Debug\netcoreapp2.0\chromedriver.exe
